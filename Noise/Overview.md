@@ -3,6 +3,9 @@
 Good introduction in below link. Also has link to some example implementations.
 https://thebookofshaders.com/11/
 
+Great place to test out combinations with other math functions:
+https://graphtoy.com/
+
 
 ## Cellular Noise
 Also often called Voronoi noise/cellular noise.
