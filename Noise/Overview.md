@@ -9,6 +9,8 @@ https://graphtoy.com/
 
 ## Cellular Noise
 Also often called Voronoi noise/cellular noise.
+Good discussion here:
+https://thebookofshaders.com/12/
 
 ## Platform independent GPU implementation for GLSL
 lumina.sourceforge.net/Tutorials/Noise.html
