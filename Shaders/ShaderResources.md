@@ -6,6 +6,8 @@ Inspiration videos:
 https://www.youtube.com/watch?v=8--5LwHRhjk
 https://www.youtube.com/watch?v=-pdSjBPH3zM
 
+Simple circle/fractal example in GLSL:
+https://www.shadertoy.com/view/fsSGWV
 
 ## Useful Shader resources by platform
 
@@ -20,7 +22,7 @@ https://forum.processing.org/two/discussion/9535/16-bit-per-channel-image-proces
 ### GLSL
 Online syntax checker: http://shdr.bkcore.com
 
-Often, the system that compiles GLSL returns little information about where the error is, the above website comes in handy to quickly fix syntax.
+Often, the system that compiles GLSL returns little information about where the error is, and may add time to the dev loop. The above website comes in handy to quickly fix syntax. Shadertoy is another possible syntax checker.
 
 ## Shader gotchas
 * `fmod` in HLSL and `fmod` in GLSL return different results. Take care when porting code from one to the other.
