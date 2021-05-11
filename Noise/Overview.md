@@ -6,6 +6,14 @@ https://thebookofshaders.com/11/
 Great place to test out combinations with other math functions:
 https://graphtoy.com/
 
+## GPU Gems article on noise implementation
+https://developer.nvidia.com/gpugems/gpugems2/part-iii-high-quality-rendering/chapter-26-implementing-improved-perlin-noise
+
+GPU Gems source code:
+https://github.com/QianMo/GPU-Gems-Book-Source-Code/tree/master/GPU-Gems-2-CD-Content/High-Quality_Rendering/Ch_26_Implementing_Improved_Perlin_Noise
+
+## GPU Implementation example
+https://github.com/ashima/webgl-noise/tree/master/src
 
 ## Cellular Noise
 Also often called Voronoi noise/cellular noise.
