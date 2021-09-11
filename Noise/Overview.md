@@ -23,7 +23,24 @@ https://thebookofshaders.com/12/
 ## Platform independent GPU implementation for GLSL
 lumina.sourceforge.net/Tutorials/Noise.html
 
-Easiest form:
+Short example:
+```
+https://greentec.github.io/shadertoy-fire-shader-en/
+uniform float a;
+uniform float b;
+uniform float c;
+
+float rand(vec2 co) {
+  return fract(sin(dot(co.xy, vec2(a, b))) * c);
+}
+
+void main() {
+    float x = rand(gl_FragCoord.xy);
+    gl_FragColor = vec4(x, x, x, 1.0);
+}
+```
+
+Another example:
 ```glsl
 // From https://thebookofshaders.com/11/
 
