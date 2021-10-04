@@ -1,7 +1,22 @@
+## Fast HSV
+
+By FabriceNeyret, at https://shadertoyunofficial.wordpress.com/2019/01/02/programming-tricks-in-shadertoy-glsl/
+
+> "Many people rely on full costly RGB2HSV conversion just to get a hue value.
+> This can be made a lot simpler using ..."
+
+```
+#define hue(v) ( .6 + .6 * cos( 2.*PI*(v) + vec4(0,-2.*PI/3.,2.*PI/3.,0) ) )  // looks better with a bit of saturation
+// code golfed version:
+// #define hue(v) ( .6 + .6 * cos( 6.3*(v) + vec4(0,23,21,0) ) )
+```
+
 ## HLSL Color conversion codes
+
 Taken from: https://www.chilliant.com/rgb2hsv.html
 
 Converting pure hue to RGB
+
 ```hlsl
   float3 HUEtoRGB(in float H)
   {
@@ -13,9 +28,10 @@ Converting pure hue to RGB
 ```
 
 Converting RGB to hue/chroma/value
+
 ```hlsl
   float Epsilon = 1e-10;
- 
+
   float3 RGBtoHCV(in float3 RGB)
   {
     // Based on work by Sam Hocevar and Emil Persson
@@ -28,6 +44,7 @@ Converting RGB to hue/chroma/value
 ```
 
 Converting HSV to RGB
+
 ```hlsl
   float3 HSVtoRGB(in float3 HSV)
   {
@@ -37,6 +54,7 @@ Converting HSV to RGB
 ```
 
 Converting HSL to RGB
+
 ```hlsl
   float3 HSLtoRGB(in float3 HSL)
   {
@@ -47,11 +65,12 @@ Converting HSL to RGB
 ```
 
 Converting HCY to RGB
+
 ```hlsl
   // The weights of RGB contributions to luminance.
   // Should sum to unity.
   float3 HCYwts = float3(0.299, 0.587, 0.114);
- 
+
   float3 HCYtoRGB(in float3 HCY)
   {
     float3 RGB = HUEtoRGB(HCY.x);
@@ -69,12 +88,13 @@ Converting HCY to RGB
 ```
 
 Converting HCL to RGB
+
 ```hlsl
   float HCLgamma = 3;
   float HCLy0 = 100;
   float HCLmaxL = 0.530454533953517; // == exp(HCLgamma / HCLy0) - 0.5
   float PI = 3.1415926536;
- 
+
   float3 HCLtoRGB(in float3 HCL)
   {
     float3 RGB = 0;
@@ -142,6 +162,7 @@ Converting HCL to RGB
 ```
 
 Converting RGB to HSV
+
 ```hlsl
   float3 RGBtoHSV(in float3 RGB)
   {
@@ -152,6 +173,7 @@ Converting RGB to HSV
 ```
 
 Converting RGB to HSL
+
 ```hlsl
   float3 RGBtoHSL(in float3 RGB)
   {
@@ -163,6 +185,7 @@ Converting RGB to HSL
 ```
 
 Converting RGB to HCY
+
 ```hlsl
   float3 RGBtoHCY(in float3 RGB)
   {
@@ -183,6 +206,7 @@ Converting RGB to HCY
 ```
 
 Converting RGB to HCL
+
 ```hlsl
   float3 RGBtoHCL(in float3 RGB)
   {
