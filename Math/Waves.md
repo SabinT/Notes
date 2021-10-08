@@ -1,4 +1,4 @@
-## Bell curve between x1 and x2
+## Bell-ish curve (peak) between x1 and x2
 
 ![](2021-10-04-00-17-20.png)
 
