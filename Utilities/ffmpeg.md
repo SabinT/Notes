@@ -1,22 +1,36 @@
+## Create from images in folder
+
+For patterns like `img001.png, img002.png, img003.png`, etc:
+
+> `ffmpeg -framerate 30 -i img%03d.png -vcodec libx264 -crf 23 -preset slow output.mp4`
+
+For twitter, I also had to add `-vf format=yuv420p`, otherwise it wouldn't process the video:
+
+> `ffmpeg -framerate 30 -i img%03d.png -vcodec libx264 -crf 23 -preset slow -vf format=yuv420p output.mp4`
+
+See notes below for CRF.
+
 ## Get resolution of video
 
-`ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv=s=x:p=0 video.mp4`
+> `ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv=s=x:p=0 video.mp4`
 
 ## Resize video
 
-`ffmpeg -i input.mp4 -vf scale=1920:1080 -preset slow -crf 18 output.mp4`
+> `ffmpeg -i input.mp4 -vf scale=1920:1080 -preset slow -crf 18 output.mp4`
 
 ## Reduce file size without resizing video
 
-> Lower CRF = higher quality / bigger file size
+Lower CRF = higher quality / bigger file size. In my experiments (and also on the internet), 18 for x264 is quite high quality.
 
-> Use -preset slow/slower/veryslow for better quality (the slower, the better)
+Use -preset slow/slower/veryslow for better quality (the slower, the better)
 
-> Warning: `-preset veryslow` is actually very slow
+Warning: `-preset veryslow` is actually very slow
 
-`ffmpeg -i input.mp4 -vcodec libx264 -crf 20 -preset slow output.mp4`
+> `ffmpeg -i input.mp4 -vcodec libx264 -crf 20 -preset slow output.mp4`
 
-`ffmpeg -i input.mp4 -vcodec libx265 -crf 23 -preset slow output.mp4`
+WARNING: x265 is not widely supported
+
+> `ffmpeg -i input.mp4 -vcodec libx265 -crf 23 -preset slow output.mp4`
 
 ## CRF values for x264
 
@@ -38,3 +52,12 @@ https://trac.ffmpeg.org/wiki/Encode/H.265
 ## Sources
 
 https://ottverse.com/change-resolution-resize-scale-video-using-ffmpeg/
+
+## x264 vs x265
+
+h265 (or HEVC) is supposed to succeed h264, but according to Mozilla, browser support is limited, and it looks like adoption is encumbered with patents
+https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs#hevc_h.265
+
+As of 2021, h264 appears better in terms of compatibility.
+
+If you want to play very high resolution videos in realtime, HEVC is better (e.g., for 8K videos), because of hardware decoding support in GPUs.
