@@ -49,6 +49,25 @@ https://superuser.com/questions/677576/what-is-crf-used-for-in-ffmpeg
 Source:
 https://trac.ffmpeg.org/wiki/Encode/H.265
 
+## FFmpeg filters
+
+Format:
+
+```
+ffmpeg ... rest of command .. -vf "filter1, filter2, ..."
+```
+
+E.g., the following has two filters for format and tmix:
+`-vf "format=yuv420p, tmix=frames=7:weights='1 1 1 1 1 1 1'"`
+
+## Temporal convolution
+
+This allows mixing multiple frames for stuff like averaging.
+Weights are centered around 'current frame'.
+Funky looking past and future trails: `tmix=frames=3:weights='-1 3 -1'`
+Extreme motion blur: `tmix=frames=7:weights='1 1 1 1 1 1 1'`
+Small amount of motion blur (weighted): `tmix=frames=3:weights='0.25 1 0.25'`
+
 ## Sources
 
 https://ottverse.com/change-resolution-resize-scale-video-using-ffmpeg/
@@ -60,4 +79,4 @@ https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs#hevc_h.2
 
 As of 2021, h264 appears better in terms of compatibility.
 
-If you want to play very high resolution videos in realtime, HEVC is better (e.g., for 8K videos), because of hardware decoding support in GPUs.
+I read that if you want to play very high resolution videos in realtime, HEVC is better (e.g., for 8K videos), because of better hardware decoding performance in GPUs.
