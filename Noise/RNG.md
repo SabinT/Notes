@@ -1,5 +1,6 @@
 # Reading
 
+Credits: Squirrel Eiserloh
 Very nice video about RNGs and noise. Goes into examples and various of qualities of RNGs.
 https://www.youtube.com/watch?v=LWFzPP8ZbdU
 
@@ -7,7 +8,7 @@ Squirrel3 Hash function:
 ![](2022-01-09-20-47-36.png)
 
 SquirrelNoise3 (with seed):
-![](2022-01-09-20-49-13.png)
+![](2022-01-09-21-08-02.png)
 
 # Convert 1D Noise to 2D/3D noise
 
