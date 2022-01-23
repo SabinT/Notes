@@ -18,6 +18,15 @@ See notes below for CRF.
 
 > `ffmpeg -i input.mp4 -vf scale=1920:1080 -preset slow -crf 18 output.mp4`
 
+## Trim video
+
+E.g., trim to keep from 6 seconds to 10 seconds.
+
+> ` ffmpeg -ss 6 -i input.mp4 -to 10 -c copy -copyts output.mp4`
+
+> BEWARE: do not change the order of parameters because that changes the meaning of the command! Also, there are other timestamp formats available. More info:
+> https://trac.ffmpeg.org/wiki/Seeking#Cuttingsmallsections
+
 ## Reduce file size without resizing video
 
 Lower CRF = higher quality / bigger file size. In my experiments (and also on the internet), 18 for x264 is quite high quality.
