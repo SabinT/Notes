@@ -4,6 +4,10 @@ Bunch of website with links to awesome stuff.
 
 https://github.com/terkelg/awesome-creative-coding
 
+# Algo list curated by Taru Muhonen and Raphaël de Courville
+
+https://www.notion.so/Creative-coding-algorithms-techniques-c5550ef2f7574126bdc77b09ed76651b
+
 # Jason Webb's morphogenesis resources list
 
 https://github.com/jasonwebb/morphogenesis-resources
