@@ -25,3 +25,6 @@ Say you're on branch `feature`, but want to update local `main` to remote `main`
 ```
 git fetch origin main:main
 ```
+## Setup SSH on windows (and avoid having to enter passphrase everytime)
+https://richardballard.co.uk/ssh-keys-on-windows-10/
+
