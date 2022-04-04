@@ -1,12 +1,19 @@
+## Tools to help with palettes
+
+https://huemint.com/brand-intersection/
+
+https://color.adobe.com/create
+
 ## Alpha blending
+
 Good article about pre-multiplied alpha:
 https://developer.nvidia.com/content/alpha-blending-pre-or-not-pre
 
 Things to check:
-* For `gl.blendEquation(gl.FUNC_ADD)` keep background opaque (a = 1)
-* Ensure alpha is 1 after blending `gl.blendFuncSeparate(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA, gl.ONE, gl.ONE_MINUS_SRC_ALPHA)`
-* TODO check other blending modes and premultiplied alpha (link above)
 
+- For `gl.blendEquation(gl.FUNC_ADD)` keep background opaque (a = 1)
+- Ensure alpha is 1 after blending `gl.blendFuncSeparate(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA, gl.ONE, gl.ONE_MINUS_SRC_ALPHA)`
+- TODO check other blending modes and premultiplied alpha (link above)
 
 ## Interpolating RGB colors in oklab space (by Inigo Quilez)
 
