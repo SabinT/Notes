@@ -2,7 +2,7 @@
 
 For patterns like `img001.png, img002.png, img003.png`, etc:
 
-> `ffmpeg -framerate 30 -i img%03d.png -vcodec libx264 -crf 23 -preset slow output.mp4`
+> `ffmpeg -framerate 30 -i img%03d.png -vcodec libx264 -crf 23 -vf format=yuv420p -preset slow output.mp4`
 
 For twitter, I also had to add `-vf format=yuv420p`, otherwise it wouldn't process the video:
 
@@ -67,7 +67,7 @@ ffmpeg ... rest of command .. -vf "filter1, filter2, ..."
 ```
 
 E.g., the following has two filters for format and tmix:
-`-vf "format=yuv420p, tmix=frames=7:weights='1 1 1 1 1 1 1'"`
+`-vf "format=yuv420p, tmix=frames=3:weights='0.25 1 0.25'"`
 
 ## Temporal convolution
 
