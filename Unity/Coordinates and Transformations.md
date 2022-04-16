@@ -10,3 +10,21 @@ float3 getWorldScale(float4x4 obj2world) {
     );
 }
 ```
+
+## Getting object position/hash
+
+```
+float3 baseWorldPos = unity_ObjectToWorld._m03_m13_m23
+```
+
+Which can then be hashed with:
+
+```
+// from https://www.shadertoy.com/view/4djSRW
+float hash13(float3 p3)
+{
+    p3  = frac(p3 * .1031);
+    p3 += dot(p3, p3.zyx + 31.32);
+    return frac((p3.x + p3.y) * p3.z);
+}
+```
