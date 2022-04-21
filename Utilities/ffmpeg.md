@@ -70,6 +70,8 @@ E.g., the following has two filters for format and tmix:
 `-vf "format=yuv420p, tmix=frames=3:weights='0.25 1 0.25'"`
 
 ## Temporal convolution
+Sample Command:
+`ffmpeg -framerate 30 -i img%03d.png -vcodec libx264 -crf 23 -vf "format=yuv420p, tmix=frames=3:weights='0.25 1 0.25'" -preset slow output.mp4`
 
 This allows mixing multiple frames for stuff like averaging.
 Weights are centered around 'current frame'.
