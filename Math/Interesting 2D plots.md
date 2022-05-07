@@ -11,3 +11,8 @@ https://math.stackexchange.com/questions/1671132/equation-for-a-smooth-staircase
 
 # Parabola of desired width and height
 ![](2022-04-25-03-34-27.png)
+
+# Sharp mountain like stuff
+[Link](https://graphtoy.com/?f1(x,t)=abs(sin(x%20-%201))&v1=false&f2(x,t)=f1(-x)&v2=false&f3(x,t)=min(f1(x),%20f2(x))&v3=true&f4(x,t)=&v4=false&f5(x,t)=&v5=false&f6(x,t)=&v6=false&grid=1&coords=0,0,5.089171420469821)
+![](2022-05-01-21-53-15.png)
+![](2022-05-01-21-53-26.png)
