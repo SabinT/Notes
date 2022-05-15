@@ -1,3 +1,10 @@
+# Bell Curve between -1 and 1
+`1 - smoothstep(0,1,abs(x))`
+![](2022-05-14-23-49-08.png)
+
+# Bell Curve between two points
+![](2022-05-14-23-50-00.png)
+
 # Smooth Stairstep
 
 ![](smoothstairs.png)
