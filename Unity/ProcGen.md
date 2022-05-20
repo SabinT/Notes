@@ -1,3 +1,7 @@
+# APIs that might be useful for procedural/generative stuff
+https://docs.unity3d.com/ScriptReference/Material.SetPass.html
+https://docs.unity3d.com/ScriptReference/Rendering.CommandBuffer.html
+
 # Making generated meshes readable
 https://forum.unity.com/threads/making-a-custom-mesh-asset-readable-at-runtime.745658/
 TLDR: make the mesh serializable as text, and edit the text file directly in VS Code. It will have a field called `m_IsReadable`

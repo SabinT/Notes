@@ -15,3 +15,19 @@ vpype \
   linesimplify \
   write output.svg
 ```
+
+## Optimize only
+```
+vpype \
+  read input.svg \
+  linemerge --tolerance 0.1mm \
+  linesort \
+  reloop \
+  linesimplify \
+  write output.svg
+```
+
+## Convert STL to SVG
+https://plotter.vision/
+
+Seems to also convert triangle pairs to quads when possible.
