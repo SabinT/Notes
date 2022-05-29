@@ -1,3 +1,17 @@
+# Meshing Stuff
+Example implementations of creating geometry with compute shaders
+https://forum.unity.com/threads/feedback-wanted-mesh-compute-shader-access.1096531/
+
+[Example1](./ComputeGrassExample.md), [Example2](./ComputeNurbsExample.md)
+
+# Get dimension of texture in compute shader
+> NOTE: This doesn't work for StructuredBuffers on metal.
+```c
+    uint2 dim;
+    Texture.GetDimensions(dim.x, dim.y);
+```
+
+# Spatial Stuff
 Interesting Hash function for making infinite 3D grids:
 From: https://developer.download.nvidia.com/presentations/2008/GDC/GDC08_ParticleFluids.pdf
 
