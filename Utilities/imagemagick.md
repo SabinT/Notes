@@ -11,3 +11,8 @@ mogrify -format jpg *.png
 ```
 mogrify -resize 1080x1080 -format jpg -quality 75 *.jpg
 ```
+
+# Create multiresolution .ICO file
+```
+convert -background transparent "icon256.png" -define icon:auto-resize=16,24,32,48,64,72,96,128,256 "icon.ico"
+```
