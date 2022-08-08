@@ -91,3 +91,10 @@ https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs#hevc_h.2
 As of 2021, h264 appears better in terms of compatibility.
 
 I read that if you want to play very high resolution videos in realtime, HEVC is better (e.g., for 8K videos), because of better hardware decoding performance in GPUs.
+
+## All files in folder with Windows shell
+Example: convert all `*.mp4` in folder to x264 with crf 20, save as `*_new.mp4`
+
+```bat
+FOR /F "tokens=*" %G IN ('dir /b *.mp4') DO ffmpeg -i "%G" -vcodec libx264 -crf 20 -preset slow -vf format=yuv420p "%~nG_new.mp4"
+```
