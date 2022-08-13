@@ -41,6 +41,13 @@ WARNING: x265 is not widely supported
 
 > `ffmpeg -i input.mp4 -vcodec libx265 -crf 23 -preset slow output.mp4`
 
+## Trim based on start/end time
+`-ss` seeks to given time.
+`-to` is the duration from the seek time.
+Time format is: `hh:mm:ss`.
+Example: 2 seconds, starting at 1 second:
+> `ffmpeg -ss 00:01:00 -to 00:02:00  -i input.mp4 -c copy output.mp4`
+
 ## CRF values for x264
 
 > Use 18 for high quality
