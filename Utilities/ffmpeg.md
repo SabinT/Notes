@@ -1,14 +1,26 @@
 ## Create from images in folder
 
-For patterns like `img001.png, img002.png, img003.png`, etc:
+For patterns like `image_000_0001.png, image_000_0002.png, img003.png`, etc:
 
-> `ffmpeg -framerate 30 -i img%03d.png -vcodec libx264 -crf 23 -vf format=yuv420p -preset slow output.mp4`
+> `ffmpeg -framerate 30 -i image_000_%04d.png -vcodec libx264 -crf 23 -vf format=yuv420p -preset slow output.mp4`
 
 For twitter, I also had to add `-vf format=yuv420p`, otherwise it wouldn't process the video:
 
-> `ffmpeg -framerate 30 -i img%03d.png -vcodec libx264 -crf 23 -preset slow -vf format=yuv420p output.mp4`
+> `ffmpeg -framerate 30 -i image_000_%04d.png -vcodec libx264 -crf 23 -preset slow -vf format=yuv420p output.mp4`
 
 See notes below for CRF.
+
+## Make gif
+Without scaling:
+> `ffmpeg -ss 30 -t 3 -i image_000_%04d.png -vf "fps=50,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -loop 0 output.gif`
+
+With scaling(width)
+> `ffmpeg -ss 30 -t 3 -i image_000_%04d.png -vf "fps=50,scale=1080:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -loop 0 output.gif`
+
+Source:
+https://superuser.com/questions/556029/how-do-i-convert-a-video-to-gif-using-ffmpeg-with-reasonable-quality
+
+Note: `-loop 0` means infinite loop.
 
 ## Get resolution of video
 
@@ -78,7 +90,7 @@ E.g., the following has two filters for format and tmix:
 
 ## Temporal convolution
 Sample Command:
-`ffmpeg -framerate 30 -i img%03d.png -vcodec libx264 -crf 23 -vf "format=yuv420p, tmix=frames=3:weights='0.25 1 0.25'" -preset slow output.mp4`
+`ffmpeg -framerate 30 -i image_000_%04d.png -vcodec libx264 -crf 23 -vf "format=yuv420p, tmix=frames=3:weights='0.25 1 0.25'" -preset slow output.mp4`
 
 This allows mixing multiple frames for stuff like averaging.
 Weights are centered around 'current frame'.

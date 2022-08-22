@@ -1,3 +1,8 @@
+# Denoising
+https://www.openimagedenoise.org/
+https://github.com/DeclanRussell/IntelOIDenoiser/releases/tag/1.6
+
+# Accumulation during play mode
 The path tracer needs a camera render to happen to accumulate frames.
 It may call `Update` etc multiple times during accumulation times.
 You have to be careful if you want to automate saving frames manually without using the Recorder.
