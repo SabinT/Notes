@@ -4,12 +4,24 @@ https://github.com/abey79/vpype#installation
 Example commands:
 
 ## Optimize, fit to letter size with margin
-
+Portrait:
 ```
 vpype \
   read input.svg \
   linemerge --tolerance 0.1mm \
   layout --fit-to-margins 2cm letter \
+  linesort \
+  reloop \
+  linesimplify \
+  write output.svg
+```
+
+Landscape:
+```
+vpype \
+  read input.svg \
+  linemerge --tolerance 0.1mm \
+  layout --fit-to-margins 2cm --landscape letter \
   linesort \
   reloop \
   linesimplify \
