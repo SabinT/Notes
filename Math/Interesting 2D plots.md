@@ -6,8 +6,10 @@
 ![](2022-05-14-23-50-00.png)
 
 # Smooth Stairstep
+[Graphtoy Link](https://graphtoy.com/?f1(x,t)=0.5&v1=false&f2(x,t)=0.25&v2=false&f3(x,t)=x%20/%20f2(x)&v3=false&f4(x,t)=smoothstep(f1(x),%201,%20x)&v4=true&f5(x,t)=f2(x)%20*%20(floor(f3(x))%20+%20f4(f3(x)%20-%20floor(f3(x))%20))&v5=true&f6(x,t)=&v6=true&grid=1&coords=0.19007103391968105,0.1864844415925732,1.8199403492395938)
 
 ![](smoothstairs.png)
+
 Based on a very good answer here:
 https://math.stackexchange.com/questions/1671132/equation-for-a-smooth-staircase-function
 
