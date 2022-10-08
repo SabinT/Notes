@@ -39,6 +39,12 @@ E.g., trim to keep from 6 seconds to 10 seconds.
 > BEWARE: do not change the order of parameters because that changes the meaning of the command! Also, there are other timestamp formats available. More info:
 > https://trac.ffmpeg.org/wiki/Seeking#Cuttingsmallsections
 
+## Loop with fade
+30 secs vid with 1 sec fade:
+```
+ffmpeg -i video.mp4 -filter_complex "[0]split[body][pre];[pre]trim=duration=1,format=yuva420p,fade=d=1:alpha=1,setpts=PTS+(29/TB)[jt];[body]trim=1,setpts=PTS-STARTPTS[main];[main][jt]overlay" faded.mp4
+```
+
 ## Reduce file size without resizing video
 
 Lower CRF = higher quality / bigger file size. In my experiments (and also on the internet), 18 for x264 is quite high quality.
