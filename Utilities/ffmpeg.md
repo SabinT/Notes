@@ -111,6 +111,18 @@ As of 2021, h264 appears better in terms of compatibility.
 
 I read that if you want to play very high resolution videos in realtime, HEVC is better (e.g., for 8K videos), because of better hardware decoding performance in GPUs.
 
+## All files in folder (Mac/Linux)
+```bash
+for i in *.mov; do <command>; done
+"$i" - original path
+"${i%.*}.mp4" - original filename with extension changed to mp4
+"${i%.*}-done.mp4" - similar to above with slightly modified filename
+```
+
+```bash
+for i in *.mov; do ffmpeg -i "$i" -vcodec libx264 -crf 23 -vf format=yuv420p -preset slow "${i%.*}.mp4"; done
+```
+
 ## All files in folder with Windows shell
 Example: convert all `*.mp4` in folder to x264 with crf 20, save as `*_new.mp4`
 
