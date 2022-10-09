@@ -1,4 +1,8 @@
-Port to older .NET standard versions - this works very easily
+This looks promising:
+https://mathparser.org/
+
+
+Port of LINQ's Dynamic Expressions to older .NET standard versions - this works - but I had trouble adding custom functions.
 https://github.com/zzzprojects/System.Linq.Dynamic.Core
 
 Drop the DLL to Unity project, and write code like this:
