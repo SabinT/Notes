@@ -30,6 +30,13 @@ Note: `-loop 0` means infinite loop.
 
 > `ffmpeg -i input.mp4 -vf scale=1920:1080 -preset slow -crf 18 output.mp4`
 
+## Overlay PNG
+> `ffmpeg -y -i video.mp4 -i overlay.png -filter_complex [0]overlay=x=0:y=0[out] -map [out] -map 0:a? output.mp4`
+
+## Crop Video
+Example: crop to 1080:1080, auto center
+>  `ffmpeg -i input.mp4 -filter:v "crop=1080:1080" output.mp4`
+
 ## Trim video
 
 E.g., trim to keep from 6 seconds to 10 seconds.
