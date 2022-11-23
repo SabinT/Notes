@@ -2,6 +2,17 @@
 https://www.openimagedenoise.org/
 https://github.com/DeclanRussell/IntelOIDenoiser/releases/tag/1.6
 
+The README in the github also has a batch script to denoise all images in folder.
+```batch
+SET FILE_EXTENSION=png
+SET PATH_TO_DENOISER=D:\tools\Denoiser_v1.6
+SET OUTPUT_PREFIX=denoised_
+
+for /r %%v in (*.%FILE_EXTENSION%) do %PATH_TO_DENOISER%\Denoiser.exe -i "%%~nv.%FILE_EXTENSION%" -o "%OUTPUT_PREFIX%%%~nv.%FILE_EXTENSION%"
+
+cmd /k
+```
+
 # Accumulation during play mode
 The path tracer needs a camera render to happen to accumulate frames.
 It may call `Update` etc multiple times during accumulation times.
