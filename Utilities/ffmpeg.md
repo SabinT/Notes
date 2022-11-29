@@ -33,6 +33,18 @@ Note: `-loop 0` means infinite loop.
 ## Overlay PNG
 > `ffmpeg -y -i video.mp4 -i overlay.png -filter_complex [0]overlay=x=0:y=0[out] -map [out] -map 0:a? output.mp4`
 
+## Loop Video
+Repeat 1 time:
+`ffmpeg -stream_loop 1 -i input.mp4 -c copy output.mp4`
+
+# Add audio to video
+`ffmpeg -i input.mp4 -i input.mp3 -codec:a aac -c copy -map 0:v:0 -map 1:a:0 output.mp4`
+
+If audio is shorter than video, use `-af apad -shortest` option, e.g:
+`ffmpeg -i input.mp4 -i input.mp3 -codec:a aac -af apad -shortest output.mp4`
+
+Note: AAC codec was needed to get the audio to play on an iPhone
+
 ## Crop Video
 Example: crop to 1080:1080, auto center
 >  `ffmpeg -i input.mp4 -filter:v "crop=1080:1080" output.mp4`
