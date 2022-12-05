@@ -22,6 +22,11 @@ https://superuser.com/questions/556029/how-do-i-convert-a-video-to-gif-using-ffm
 
 Note: `-loop 0` means infinite loop.
 
+## Add watermark PNG
+Add `watermark.png` to the bottom center of video:
+`ffmpeg -i input.mp4 -i watermark.png -filter_complex "scale=200:100,overlay=(main_w-overlay_w)/2:(main_h-overlay_h)" -codec:a copy output.mp4`
+
+
 ## Get resolution of video
 
 > `ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv=s=x:p=0 video.mp4`
