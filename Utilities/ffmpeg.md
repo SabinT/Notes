@@ -2,11 +2,11 @@
 
 For patterns like `image_000_0001.png, image_000_0002.png, img003.png`, etc:
 
-> `ffmpeg -framerate 30 -i image_000_%04d.png -vcodec libx264 -crf 23 -vf format=yuv420p -preset slow output.mp4`
+> `ffmpeg -framerate 30 -i image_000_%04d.png -vcodec libx264 -crf 23 -vf format=yuv420p -movflags faststart -preset slow output.mp4`
 
 For twitter, I also had to add `-vf format=yuv420p`, otherwise it wouldn't process the video:
 
-> `ffmpeg -framerate 30 -i image_000_%04d.png -vcodec libx264 -crf 23 -preset slow -vf format=yuv420p output.mp4`
+> `ffmpeg -framerate 30 -i image_000_%04d.png -vcodec libx264 -crf 23 -preset slow -movflags faststart -vf format=yuv420p output.mp4`
 
 See notes below for CRF.
 
