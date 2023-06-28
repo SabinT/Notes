@@ -10,6 +10,9 @@ For twitter, I also had to add `-vf format=yuv420p`, otherwise it wouldn't proce
 
 See notes below for CRF.
 
+## Optimize existing video for web
+`ffmpeg -i input.mp4 -movflags faststart -acodec copy -vcodec copy output.mp4`
+
 ## Make gif
 Without scaling:
 > `ffmpeg -i image_000_%04d.png -vf "fps=50,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -loop 0 output.gif`
