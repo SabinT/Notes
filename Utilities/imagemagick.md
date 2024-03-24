@@ -9,7 +9,7 @@ mogrify -format jpg *.png
 > WARNING: `mogrify` modifies images inline. Add `-path newFolder` to make results not overwrite originals.
 
 ```
-mogrify -resize 1080x1080 -format jpg -quality 75 *.jpg
+mogrify -resize 1080x1080 -path output -format jpg -quality 75 *.jpg
 ```
 
 # Create multiresolution .ICO file
